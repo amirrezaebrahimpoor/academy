@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="margin: 0;">
+    <center>
+        <table>
+            {% for items in data %}
+                {% if forloop.counter0|divisibleby:"3" %}
+                <tr>
+                {% endif %}
+                <td style="background-color: rgb(160, 160, 160);padding: 10px;height: 100px;width: 100px;">
+                    
+                    <p>name:{{items.name}}</p>
+                    <p>timed:{{items.time}}</p>
+                    <p>price:{{items.price}}</p>
+                </td>
+                {% if forloop.counter|divisibleby:'3' %}
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>
